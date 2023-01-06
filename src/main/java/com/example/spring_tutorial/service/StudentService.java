@@ -1,6 +1,5 @@
 package com.example.spring_tutorial.service;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
@@ -19,31 +18,13 @@ import com.example.spring_tutorial.entity.Student;
 public class StudentService {
 	
 	public Student getDemoStudent() {
-		return new Student(
-			1,
-			"Md Abdul Quadir",
-			"aqnahid@gmail.com",
-			LocalDate.of(1993,Month.MARCH,23),
-			29
-		);
+		return new Student(1, 1, "Md Abdul Quadir", "aqnahid@gmail.com", "+8801537525291", LocalDate.of(1990, Month.DECEMBER, 10), "BD");
 	}
 	
 	public List<Student> getDemoStudentList() {
 		return Arrays.asList(
-			new Student(
-				1,
-				"Md Abdul Quadir",
-				"aqnahid@gmail.com",
-				LocalDate.of(1993,Month.MARCH,23),
-				29
-			),
-			new Student(
-				2,
-				"Abu Yusuf",
-				"yusuf@gmail.com",
-				LocalDate.of(1992,Month.OCTOBER,7),
-				30
-			)
+			new Student(1, 1, "Stephen Hawkings", "stephen@gmail.com", "+67343211", LocalDate.of(1985, Month.JULY, 14), "UK"),
+			new Student(1, 1, "Elon Mask", "elonmask@gmail.com", "+989787998", LocalDate.of(1990, Month.JULY, 1), "USA")
 		);
 	}
 
