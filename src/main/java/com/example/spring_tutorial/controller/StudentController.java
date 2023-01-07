@@ -32,6 +32,7 @@ public class StudentController {
 	@Autowired
 	StudentRepo studentRepo;
 	
+	//in postman, hit http://localhost:8080/api/student using POST
 	@PostMapping("/student")
 	public ResponseEntity<Student> createStudent(@RequestBody Student s){
 		try {
@@ -43,6 +44,7 @@ public class StudentController {
 		}
 	}
 	
+	//in postman, hit http://localhost:8080/api/student using GET
 	@GetMapping("/student")
 	public ResponseEntity<List<Student>> readStudents(@RequestParam(required = false) String strSearch){
 		List<Student> listStudents = new ArrayList<Student>();
@@ -64,6 +66,7 @@ public class StudentController {
 		}
 	}
 	
+	//in postman, hit http://localhost:8080/api/student/{id} using GET
 	@GetMapping("/student/{id}")
 	public ResponseEntity<Student> readStudentById(@PathVariable("id") int id){
 		Optional<Student> studentData=studentRepo.findById(id);
@@ -76,6 +79,7 @@ public class StudentController {
 		}
 	}
 	
+	//in postman, hit http://localhost:8080/api/student/{id} using PUT
 	@PutMapping("/student/{id}")
 	public ResponseEntity<Student> updateStudent(@PathVariable("id") int id, @RequestBody Student s){
 		Optional<Student> studentData=studentRepo.findById(id);
@@ -102,6 +106,7 @@ public class StudentController {
 		}
 	}
 	
+	//in postman, hit http://localhost:8080/api/student/{id} using DELETE
 	@DeleteMapping("/student/{id}")
 	public ResponseEntity<HttpStatus> deleteStudent(@PathVariable("id") int id){
 		try {
@@ -112,6 +117,8 @@ public class StudentController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	//in postman, hit http://localhost:8080/api/student using DELETE
 	@DeleteMapping("/student")
 	public ResponseEntity<HttpStatus> deleteAllStudents() {
 		try {
