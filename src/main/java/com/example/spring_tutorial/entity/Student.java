@@ -9,10 +9,10 @@ import javax.persistence.*;
 public class Student {
 	@Id		//Indicates, this Primary Key of this Entity Class
 	@GeneratedValue(strategy=GenerationType.AUTO)	//defines, generation strategy for the primary key.
-	private int id;
+	private Integer id;
 	
 	@Column()
-	private int department_id;
+	private Integer department_id;
 	
 	@Column(length=128, nullable=false)
 	private String name;
@@ -33,7 +33,7 @@ public class Student {
 		
 	}
 	
-	public Student(int id, int department_id, String name, String email, String phone, LocalDate dob, String country_code) {
+	public Student(Integer id, Integer department_id, String name, String email, String phone, LocalDate dob, String country_code) {
 		this.id = id;
 		this.department_id = department_id;
 		this.name = name;
@@ -44,24 +44,29 @@ public class Student {
 	}
 	
 	
+	
 
-	public int getId() {
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getDepartmentId() {
+	public Integer getDepartment_id() {
 		return department_id;
 	}
-	public void setDepartmentId(int department_id) {
+
+	public void setDepartment_id(Integer department_id) {
 		this.department_id = department_id;
 	}
 
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -69,6 +74,7 @@ public class Student {
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -76,6 +82,7 @@ public class Student {
 	public String getPhone() {
 		return phone;
 	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -83,19 +90,20 @@ public class Student {
 	public LocalDate getDob() {
 		return dob;
 	}
+
 	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 
-	public String getCountryCode() {
+	public String getCountry_code() {
 		return country_code;
 	}
-	public void setCountryCode(String country_code) {
+
+	public void setCountry_code(String country_code) {
 		this.country_code = country_code;
 	}
 
-
 	public String toString() {
-		return "Student{"+"id="+id+", department_id="+department_id+", name="+name+", email="+email+", phone="+phone+"dob="+dob+"country_code="+country_code+"}";
+		return "Student{"+"id="+id+", department_id="+department_id+", name="+name+", email="+email+", phone="+phone+", dob="+dob+", country_code="+country_code+"}";
 	}
 }
